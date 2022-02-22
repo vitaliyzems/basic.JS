@@ -24,9 +24,10 @@
   <script>
     "use strict";
 
-    let degCel = Number(prompt('Введите температуру в градусах Цельсия'));
-    let degFar = (9 / 5) * degCel + 32;
-    alert(`Цельсий: ${degCel}, Фаренгейт: ${degFar}`);
+    const degCel = Number(prompt('Введите температуру в градусах Цельсия'));
+    const degFar = (9 / 5) * degCel + 32;
+
+    alert(`Цельсий: ${degCel}, Фаренгейт: ${Math.round(degFar * 10) / 10}`);
   </script>
 </body>
 
