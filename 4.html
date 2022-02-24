@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо реализовать четыре функции, каждая функция должна принимать по два
@@ -28,10 +30,54 @@
 
 Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    /**
+    * Функция выводит результат суммы двух принимаемых чисел.
+    * @param {number} a Первое число.
+    * @param {number} b Второе число.
+    * @returns {number} Результат суммы.
+    */
+    function sum(a, b) {
+      return (a + b);
+    }
+
+    /**
+    * Функция принимает 2 числа и выводит результат вычитания из большего числа
+    меньшего. Если числа равны выводится 0.
+    * @param {number} a Первое число.
+    * @param {number} b Второе число.
+    * @returns {number} Результат разности.
+    */
+    function difference(a, b) {
+      if (a > b) {
+        return a - b;
+      } else {
+        return b - a;
+      }
+    }
+
+    /**
+    * Функция вычисления произведения двух принимаемых чисел.
+    * @param {number} a Первое число.
+    * @param {number} b Второе число.
+    * @returns {number} Результат произведения.
+    */
+    function multiplication(a, b) {
+      return a * b;
+    }
+
+    /**
+    * Функция принимает 2 числа и делит первое на второе.
+    * @param {number} a Первое число.
+    * @param {number} b Второе число.
+    * @returns {number} Результат деления первого числа на второе.
+    */
+    function division(a, b) {
+      return a / b;
+    }
+  </script>
 </body>
+
 </html>
