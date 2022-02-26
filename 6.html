@@ -28,30 +28,18 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
     "use strict";
 
     function declinationOfNumber(count, one, two, five) {
-      if (count === 1) {
-        return one;
-      } else if (count > 1 && count < 5) {
-        return two;
-      } else if (count >= 5) {
-        return five;
-      }
-    }
+      const n100 = count % 100;
+      const n10 = n100 % 10;
 
-    // Второй вариант.
-    /*
-    function declinationOfNumber(count, one, two, five) {
-      switch (count) {
-        case 1:
-          return one;
-        case 2:
-        case 3:
-        case 4:
-          return two;
-        default:
-          return five;
+      if (n100 >= 5 && n100 <= 20) {
+        return five;
+      } else if (n10 === 1) {
+        return one;
+      } else if (n10 > 1 && n10 < 5) {
+        return two;
       }
+      return five;
     }
-    */
 
     // Число яблок, можно пробовать поставить свое целое, положительное число.
     const applesNumber = 5;
