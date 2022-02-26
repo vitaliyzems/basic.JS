@@ -30,9 +30,7 @@
       console.log(`Разность чисел равна ${a - b}`);
     } else if (a < 0 && b < 0) {
       console.log(`Произведение чисел равно ${a * b}`);
-    } else if (a > 0 && b < 0) {
-      console.log(`Сумма чисел равна ${a + b}`);
-    } else if (a < 0 && b > 0) {
+    } else if (a > 0 && b < 0 || a < 0 && b > 0) {
       console.log(`Сумма чисел равна ${a + b}`);
     }
   </script>

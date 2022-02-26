@@ -58,9 +58,8 @@ Infinity делать не нужно, однако, в случае если б
         return multiplication(a, b);
       } else if (operation === '/') {
         return division(a, b);
-      } else {
-        return NaN;
       }
+      return NaN;
     }
 
     /**
@@ -70,7 +69,7 @@ Infinity делать не нужно, однако, в случае если б
     * @returns {number} Результат суммы.
     */
     function sum(a, b) {
-      return (a + b);
+      return a + b;
     }
 
     /**
@@ -83,9 +82,8 @@ Infinity делать не нужно, однако, в случае если б
     function difference(a, b) {
       if (a > b) {
         return a - b;
-      } else {
-        return b - a;
       }
+      return b - a;
     }
 
     /**
