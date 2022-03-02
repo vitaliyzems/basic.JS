@@ -31,9 +31,7 @@
       },
     ];
 
-    products.forEach(function (discount) {
-      discount.price = discount.price - (discount.price * 15) / 100;
-    });
+    products.forEach(product => product.price = product.price * .85);
 
     console.log(`Цена со скидкой - ${products[0].price}`);
     console.log(`Цена со скидкой - ${products[1].price}`);
