@@ -61,13 +61,13 @@
       this.lastUpdate = new Date;
     }
 
-    PostES5.prototype.edit = function (color) {
-      this.color = color;
+    PostES5.prototype.edit = function (text) {
+      this.text = text;
       this.lastUpdate = new Date;
-    }
+    };
 
     const post1 = new PostES5('Виктор', 'Текст поста 1');
-    // post1.edit('white');
+    // post1.edit('Измененный текст поста 1');
 
     console.log(post1);
 
@@ -79,14 +79,14 @@
         this.lastUpdate = new Date;
       }
 
-      edit(color) {
-        this.color = color;
+      edit(text) {
+        this.text = text;
         this.lastUpdate = new Date;
       }
     }
 
     const post2 = new PostES6('Сергей', 'Текст поста 2');
-    post2.edit('red');
+    post2.edit('Измененный текст поста 2');
 
     console.log(post2);
 
@@ -101,15 +101,16 @@
     }
 
     AttachedPostES5.prototype = Object.create(PostES5.prototype);
+    AttachedPostES5.prototype.constructor = AttachedPostES5;
 
     AttachedPostES5.prototype.makeTextHighlighted = function () {
       this.highlighted = true;
       this.lastUpdate = new Date;
-    }
+    };
 
     const attachedPost1 = new AttachedPostES5('John', 'Text for example');
 
-    attachedPost1.edit('blue');
+    attachedPost1.edit('Edited text');
     attachedPost1.makeTextHighlighted();
 
     console.log(attachedPost1);
@@ -117,7 +118,7 @@
     // es6 стиль
     class AttachedPostES6 extends PostES6 {
       constructor(name, text) {
-        super(name, text)
+        super(name, text);
         this.highlighted = false;
       }
 
@@ -134,7 +135,7 @@
     указывать чтобы прототипом являлся прототип от PostES6? Метод edit берется
     от туда при наследовании?
     */
-    attachedPost2.edit('red');
+    attachedPost2.edit('Edited text of second post');
     // attachedPost2.makeTextHighlighted();
 
     console.log(attachedPost2);
