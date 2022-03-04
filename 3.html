@@ -45,17 +45,19 @@
       и вернет пустой объект.
     */
     function getDigitsOfNumber(num) {
-      if (num < 0 || num > 999 || Number.isInteger(num) === false) {
+      if (num < 0 || num > 999 || !Number.isInteger(num)) {
         console.warn('Неверный ввод');
         return {};
-      } else {
-        this.units = num % 10;
-        this.dozens = (num % 100 - this.units) / 10;
-        this.hundreds = (num - 10 * this.dozens - this.units) / 100;
+      }
+      return {
+        units: num % 10,
+        dozens: Math.trunc(num / 10) % 10,
+        hundreds: Math.trunc(num / 100),
       }
     }
 
-    // const number1 = new getDigitsOfNumber(-245);
+    const number1 = getDigitsOfNumber(245);
+    console.log(number1);
 
   </script>
 </body>

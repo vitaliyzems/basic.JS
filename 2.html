@@ -58,12 +58,12 @@
     function PostES5(name, text) {
       this.name = name;
       this.text = text;
-      this.lastUpdate = new Date;
+      this.lastUpdate = new Date();
     }
 
     PostES5.prototype.edit = function (text) {
       this.text = text;
-      this.lastUpdate = new Date;
+      this.lastUpdate = new Date();
     };
 
     const post1 = new PostES5('Виктор', 'Текст поста 1');
@@ -76,12 +76,12 @@
       constructor(name, text) {
         this.name = name;
         this.text = text;
-        this.lastUpdate = new Date;
+        this.lastUpdate = new Date();
       }
 
       edit(text) {
         this.text = text;
-        this.lastUpdate = new Date;
+        this.lastUpdate = new Date();
       }
     }
 
@@ -105,7 +105,7 @@
 
     AttachedPostES5.prototype.makeTextHighlighted = function () {
       this.highlighted = true;
-      this.lastUpdate = new Date;
+      this.lastUpdate = new Date();
     };
 
     const attachedPost1 = new AttachedPostES5('John', 'Text for example');
@@ -117,14 +117,11 @@
 
     // es6 стиль
     class AttachedPostES6 extends PostES6 {
-      constructor(name, text) {
-        super(name, text);
-        this.highlighted = false;
-      }
+      highlighted = false;
 
       makeTextHighlighted() {
         this.highlighted = true;
-        this.lastUpdate = new Date;
+        this.lastUpdate = new Date();
       }
     }
 
