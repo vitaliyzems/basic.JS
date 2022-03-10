@@ -88,11 +88,11 @@
     Вывод каждого атрибута и значений должен выглядеть следующим образом (пример):
     Атрибут "class" содержит значение "btn btn-secondary dropdown-toggle"
      */
-    const elAttr = document.querySelector('.btn.dropdown-toggle').attributes;
+    const elAttrs = document.querySelector('.btn.dropdown-toggle').attributes;
 
-    for (let i = 0; i < elAttr.length; i++) {
+    for (let i = 0; i < elAttrs.length; i++) {
       console.log(
-        `Атрибут "${elAttr[i].name}" содержит значение "${elAttr[i].value}"`
+        `Атрибут "${elAttrs[i].name}" содержит значение "${elAttrs[i].value}"`
       );
     }
 
