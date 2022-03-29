@@ -69,9 +69,10 @@
     также должен меняться.
     */
     const inputFromEl = document.getElementById('from');
+    const spanEl = document.querySelector('span');
 
     inputFromEl.addEventListener('input', () => {
-      document.querySelector('span').textContent = inputFromEl.value;
+      spanEl.textContent = inputFromEl.value;
     });
 
     /*
@@ -100,30 +101,24 @@
     Если поле было чем-либо заполнено, подсветку (класс error) необходимо убрать.
      */
     const formEl = document.querySelector('form');
-    const firstInputEl = formEl.querySelector('input.form-control');
-    const secondInputEl = formEl.querySelector('select.form-control');
+    const formControlEls = formEl.querySelectorAll('.form-control');
 
-    formEl.addEventListener('submit', (event) => {
-      if (!firstInputEl.value) {
-        event.preventDefault();
-        firstInputEl.classList.add('error');
-      }
-      if (secondInputEl.selectedIndex === 0) {
-        event.preventDefault();
-        secondInputEl.classList.add('error');
-      }
+    formEl.addEventListener('submit', event => {
+      formControlEls.forEach(el => {
+        if (!el.value) {
+          el.classList.add('error');
+          event.preventDefault();
+        }
+      });
     });
 
-    firstInputEl.addEventListener('input', () => {
-      if (firstInputEl.value) {
-        firstInputEl.classList.remove('error');
-      } else firstInputEl.classList.add('error');
-    });
-
-    secondInputEl.addEventListener('input', () => {
-      if (secondInputEl.selectedIndex !== 0) {
-        secondInputEl.classList.remove('error');
-      } else secondInputEl.classList.add('error');
+    formEl.addEventListener('input', event => {
+      if (!event.target.classList.contains('form-control')) {
+        return;
+      }
+      !event.target.value
+        ? event.target.classList.add('error')
+        : event.target.classList.remove('error');
     });
 
   </script>

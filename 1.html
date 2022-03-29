@@ -59,16 +59,13 @@
     3. При клике на кнопку "В корзину" название кнопки должно поменяться на
     "Добавлено" и кнопка должна стать неактивной.
      */
-    const buttonEls = document.querySelectorAll('button');
-
-    function clickEventForButtons(el) {
-      el.addEventListener('click', () => {
-        el.textContent = 'Добавлено';
-        el.setAttribute('disabled', '');
-      });
-    }
-
-    buttonEls.forEach(el => clickEventForButtons(el));
+    document.body.addEventListener('click', event => {
+      if (event.target.tagName !== 'BUTTON') {
+        return;
+      }
+      event.target.textContent = 'Добавлено';
+      event.target.disabled = true;
+    });
 
     /*
     4. Создайте полную (глубокую) копию элемента с классом product, измените в
@@ -86,16 +83,13 @@
     );
     document.querySelector('.product:last-of-type').replaceWith(newProdEl);
 
-    clickEventForButtons(newProdEl.querySelector('button'));
-
     /*
     5. По истечению 2 секунд с момента открытия страницы первый товар должен быть
     удален из html.
      */
     const firstProd = document.querySelector('.product');
-    const removeFirstProd = () => firstProd.remove();
 
-    setTimeout(removeFirstProd, 2000);
+    setTimeout(() => firstProd.remove(), 2000);
 
   </script>
 </body>
