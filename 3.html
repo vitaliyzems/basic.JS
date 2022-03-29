@@ -28,8 +28,8 @@
      */
     function descendingOrder(n) {
       if (!Number.isInteger(n) || n < 0) {
-        alert('Неверный ввод')
-        return;
+        alert('Неверный ввод');
+        return NaN;
       }
       const arr = Array.from('' + n);
       arr.sort((a, b) => b - a);
