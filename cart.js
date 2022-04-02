@@ -1,4 +1,5 @@
 'use strict';
+
 const cartIcon = document.querySelector('.cartIconWrap');
 const cartWindow = document.querySelector('.cartWindow');
 const cartWindowHead = document.querySelector('.cartWindowHead');
